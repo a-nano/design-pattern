@@ -11,15 +11,15 @@ namespace Iterator
         static void Main(string[] args)
         {
             BookShelf bookShelf = new BookShelf();
-            bookShelf.appendBook(new Book("Around the world in 80 days"));
-            bookShelf.appendBook(new Book("Bigle"));
-            bookShelf.appendBook(new Book("Cinderella"));
-            bookShelf.appendBook(new Book("Daddy-Long-legs"));
+            bookShelf.AppendBook(new Book("Around the world in 80 days"));
+            bookShelf.AppendBook(new Book("Bigle"));
+            bookShelf.AppendBook(new Book("Cinderella"));
+            bookShelf.AppendBook(new Book("Daddy-Long-legs"));
             IIterator it = bookShelf.Iterator();
             while(it.HasNext())
             {
                 Book book = (Book)it.Next();
-                Console.WriteLine(book.Name);
+                Console.WriteLine(book.GetName());
             }
 
             // 入力待ち
@@ -48,6 +48,10 @@ namespace Iterator
         {
             this.Name = name;
         }
+        public string GetName()
+        {
+            return Name;
+        }
     }
 
     // 本棚を表すクラス
@@ -59,7 +63,7 @@ namespace Iterator
         {
             return books[index];
         }
-        public void appendBook(Book book)
+        public void AppendBook(Book book)
         {
             this.books.Add(book);
             Last++;

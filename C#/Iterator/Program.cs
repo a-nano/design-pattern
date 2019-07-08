@@ -64,7 +64,7 @@ namespace Iterator
             this.books.Add(book);
             Last++;
         }
-        public int Getlength()
+        public int GetLength()
         {
             return this.Last;
         }
@@ -86,7 +86,7 @@ namespace Iterator
         }
         public bool HasNext()
         {
-            if (Index < BookShelf.Getlength())
+            if (Index < BookShelf.GetLength())
             {
                 return true;
             }
